@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="css/text" href="/css/style.css">
+    <style>
+        * {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(110deg, #0f1829, #050812);
+        }
+
+        .big-container {
+            width: 100%;
+            height: 95vh;
+            position: absolute;
+            max-width: 1200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #000;
+            animation: fade 3s ease-in-out forwards;
+            opacity: 0;
+
+
+        }
+
+        @keyframes fade {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+        }
+
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            z-index: -1;
+
+        }
+
+        header {
+            min-width: 60px;
+            width: 100%;
+            border-bottom: 1px solid #fff8;
+            overflow: hidden;
+            animation: fade 2s ease-in-out forwards;
+            animation-delay: 1s;
+            opacity: 0;
+
+        }
+
+        header .name {
+            float: left;
+            margin-left: 20px;
+        }
+
+        header .name h1 {
+            color: white;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            line-height: 60px;
+            text-shadow: 0 0 5px white;
+
+        }
+
+        header nav {
+            float: right;
+            margin-right: 20px;
+            min-height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul {
+            margin-right: 30px;
+            min-width: 450px;
+        }
+
+        nav ul li {
+            list-style: none;
+            display: inline-block;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 15px;
+            text-transform: uppercase;
+            display: inline-block;
+            text-shadow: 0 0 5px white;
+        }
+
+        .active {
+            background: teal;
+            border-radius: 20px;
+        }
+
+        a:hover {
+            color: turquoise;
+
+        }
+
+        nav form {
+            height: 10px;
+            min-width: 300px;
+            margin: 10px 0;
+        }
+
+        form input {
+            height: 100px;
+            width: 250px;
+            border: 1px solidt teal;
+            background: #0007;
+            padding: 0 5px;
+            color: white;
+            outline: none;
+        }
+
+        form button {
+            width: 50px;
+            height: 100px;
+            border: 1px solid teal;
+            background: #0007;
+            color: white;
+            cursor: pointer;
+        }
+
+        section {
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: white;
+            text-align: center;
+            text-shadow: 0 0 5px white;
+            animation: fade 2s ease-in-out forwards;
+            animation-delay: 1s;
+            opacity: 0;
+
+        }
+
+        section h2 {
+            text-transform: uppercase;
+            font-size: 3em;
+            letter-spacing: 10px;
+        }
+
+        section p {
+            line-height: 1.4;
+            margin: 15px 0;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        footer {
+            text-transform: uppercase;
+            letter-spacing: 10px;
+            animation: fade 2s ease-in-out forwards;
+            animation-delay: 1s;
+            opacity: 0;
+        }
+
+        footer p {
+            max-width: 600px;
+            margin: 15px auto;
+            line-height: 1.4;
+            letter-spacing: 2px;
+        }
+
+        @media(max-width: 1000px) {
+
+            header .name,
+            header nav {
+                width: 100%;
+                margin: 0;
+                text-align: center;
+            }
+        }
+        @media(max-width: 850px){
+            nav ul{
+                min-width: 300px;
+                margin: 0;
+            }
+            nav ul a{
+                padding: 5px 10px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big-container">
+        <div class="container">
+            <header>
+                <div class="name">
+                    <h1>Earth</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">contact</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#" class="active">Get Started</a> </li>
+
+                    </ul>
+                    <form>
+                        <input type="text" name="srch" id="srch" required placeholder="Enter ur search">
+                        <button type="submit"><i class="fa fa-search"></i></button>
+                    </form>
+                </nav>
+            </header>
+
+            <section>
+                <h2>Earth</h2>
+                <p>please! subsribe, share and like for us</p>
+                <a href="#" class="active">Get Started</a>
+            </section>
+
+            <footer>
+                <h2>About us</h2>
+                <p>welcome to our channel "junaid khan".
+                    here you can learn web desigining,
+                    ui/ux desigining, html css tutorials
+                    css, animation and css effects, javascript
+                    and jquery tutorials and related so on.
+                </p>
+                <h3>Follow us on social media</h3>
+                <div class="row">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-instagram"></i></a>
+                    <a href="#"><i class="fa fa-linkedin"></i></a>
+
+                </div>
+
+            </footer>
+
+            <video src="bg-video.mp4" autoplay muted loop></video>
+
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
